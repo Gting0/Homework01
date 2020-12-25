@@ -23,6 +23,7 @@ public class Test05 {
 		System.out.println("请输入验证码：");
 		System.out.println(str1.equalsIgnoreCase(s.next())?"输入正确":"输入错误");
 
+
 	}
 	
 }

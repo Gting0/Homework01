@@ -24,5 +24,6 @@ public class Test03 {
 	 */
 	public static boolean check(StringBuilder str){
 		return str.equals(str.reverse());
+
 	}
 }

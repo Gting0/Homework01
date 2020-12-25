@@ -13,5 +13,6 @@ public class Test04 {
 		System.out.println("请输入一个email地址：");
 		String str = s.next();
 		System.out.println(str.substring(0,str.lastIndexOf("@")));
+
 	}
 }

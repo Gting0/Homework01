@@ -19,5 +19,6 @@ public class Test02 {
 		System.out.println(str3);
 		String str4 = str3.substring(4);
 		System.out.println(str4);
+
 	}
 }
