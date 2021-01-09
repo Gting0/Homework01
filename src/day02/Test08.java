@@ -24,7 +24,6 @@ public class Test08 {
         int salary;
         String s2 ;
         ArrayList<Person> arr = new ArrayList<>();
-        int num = 0;
         do {
             System.out.println("请输入员工姓名：");
             name = s.next();
@@ -38,7 +37,6 @@ public class Test08 {
             System.out.println("请输入员工月薪：");
             salary = s.nextInt();
             arr.add(new Person(name,age,gender,salary));
-            num++;
             System.out.println("是否还有下一个？");
             s2 = s.next();
         }while(s2.equals("是"));

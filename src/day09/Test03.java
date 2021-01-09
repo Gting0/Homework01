@@ -5,5 +5,21 @@ package day09;
  *
  */
 public class Test03 {
-
+    public static void main(String[] args) {
+        Thread t1 = new Thread(){
+            public void run(){
+                for (int i = 0; i < 1000; i++) {
+                    System.out.println(i+1);
+                }
+            }
+        };
+        Thread t2 = new Thread(){
+            public void run(){
+                System.out.println("你好");
+                System.out.println("再见");
+            }
+        };
+        t1.start();
+        t2.start();
+    }
 }

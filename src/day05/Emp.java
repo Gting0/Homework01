@@ -1,4 +1,10 @@
 package day05;
+
+import javax.swing.border.StrokeBorder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Objects;
+
 /**
  * 定义私有属性:
  * String name;
@@ -17,6 +23,94 @@ package day05;
  * @author Bonnie
  *
  */
-public class Emp {
+public class Emp implements Comparable{
+    private String name;
+    private int age;
+    private boolean gender;
+    private int salary;
+    private Date hireDate;
 
+    public Emp() {
+    }
+
+    public Emp(String name, int age, boolean gender, int salary, Date hireDate) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.salary = salary;
+        this.hireDate = hireDate;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public boolean getGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public Date getHireDate() {
+        return hireDate;
+    }
+
+    public void setHireDate(Date hireDate) {
+        this.hireDate = hireDate;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        day05.Emp emp = (day05.Emp) o;
+        return age == emp.age &&
+                salary == emp.salary &&
+                Objects.equals(name, emp.name) &&
+                Objects.equals(gender, emp.gender) &&
+                Objects.equals(hireDate, emp.hireDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, gender, salary, hireDate);
+    }
+
+    @Override
+    public String toString() {
+        return name + "," + age + "," + (gender?"男":"女") + "," + salary + "," + new SimpleDateFormat("yyyy-MM-dd").format(hireDate);
+
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Emp emp = (Emp)o;
+        return this.age - emp.age;
+    }
 }
